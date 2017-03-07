@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Analysis of gapminder data for *Afghanistan*, *Albania* and *Algeria*
+### Analysis of GapMinder Data
 
 ```{r load gapminder data and subset Afghanistan, Albania and Algeria}
 gapM <- read.table(file = "output/combined_gapMinder.tsv", sep = "\t", header = TRUE )
@@ -26,6 +26,14 @@ plot(Alge$year, Alge$gdpPercap, main = "Algeria GDP per capita", xlab = "year", 
 ```
 
 
+
+
+Summary statistics for life expectancy data by continent
+```{r summary stats for continents}
+ mean_lifeExp<- aggregate((lifeExp)~continent, data = gapM, FUN = mean)
+ min_lifeExp<- aggregate((lifeExp)~continent, data = gapM, FUN = min)
+ max_lifeExp<- aggregate((lifeExp)~continent, data = gapM, FUN = max)
+```
 
 
 
