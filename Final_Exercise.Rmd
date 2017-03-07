@@ -1,0 +1,33 @@
+---
+title: "Final Exercise"
+author: "T. Yvanka de Soysa"
+date: "March 6, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Analysis of gapminder data for *Afghanistan*, *Albania* and *Algeria*
+
+```{r load gapminder data and subset Afghanistan, Albania and Algeria}
+gapM <- read.table(file = "output/combined_gapMinder.tsv", sep = "\t", header = TRUE )
+Afg <- gapM[gapM$country == "Afghanistan",]
+Alb <- gapM[gapM$country == "Albania",]
+Alge <- gapM[gapM$country == "Algeria",]
+```
+
+Changes in GDP per capita over time for Afghanistan, Albania and Algeria
+```{r scatter plot of GDP over time for all countries}
+plot(Afg$year, Afg$gdpPercap, main = "Afghanistan GDP per capita", xlab = "year", ylab = "GDP per capita")
+plot(Alb$year, Alb$gdpPercap, main = "Albania GDP per capita", xlab = "year", ylab = "GDP per capita")
+plot(Alge$year, Alge$gdpPercap, main = "Algeria GDP per capita", xlab = "year", ylab = "GDP per capita")
+```
+
+
+
+
+
+
+
